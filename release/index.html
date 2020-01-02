@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Feed links Generator</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <h1>リンク作成ツール</h1>
+    <div id="app">
+        <div><hello v-bind:name="name" /></div>
+        <div><input type="text" v-model="name"></div>
+    </div>
+
+    <script>
+    var hello = Vue.component('hello',
+    {
+        props: ['name'],
+        template: `
+            <div>
+                https://qiita.com/tags/{{name}}/feed.atom<br />
+                https://b.hatena.ne.jp/search/text?q={{name}}&users=1&mode=rss<br />
+                https://news.google.com/atom/search?ie=UTF-8&oe=UTF-8&q={{name}}&hl=ja&gl=JP&ceid=JP:ja<br />
+                http://www.slideshare.net/rss/tag/{{name}}<br />
+                https://medium.com/feed/tag/{{name}}<br />
+                https://www.reddit.com/r/{{name}}/<br />
+                https://queryfeed.net/tw?q={{name}}<br />
+                https://note.com/hashtag/{{name}}/rss
+            </div>
+        `,
+    })
+
+    var app = new Vue({
+        el: '#app',
+        data : {
+            name: 'ここに検索したい文字'
+        }
+    });
+    </script>
+</body>
+</html>
