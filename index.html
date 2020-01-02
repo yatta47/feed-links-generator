@@ -10,8 +10,9 @@
 <body>
     <h1>リンク作成ツール</h1>
     <div id="app">
-        <div><hello v-bind:name="name" /></div>
         <div><input type="text" v-model="name"></div>
+        <hr>
+        <div><hello v-bind:name="name" /></div>
     </div>
 
     <script>
@@ -35,7 +36,7 @@
     var app = new Vue({
         el: '#app',
         data : {
-            name: 'ここに検索したい文字'
+            name: '＜ここに検索したい文字＞'
         }
     });
     </script>
