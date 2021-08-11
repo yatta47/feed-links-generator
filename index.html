@@ -21,16 +21,19 @@
         props: ['name'],
         template: `
             <div>
-                https://qiita.com/tags/{{name}}/feed.atom<br />
-                https://b.hatena.ne.jp/search/text?q={{name}}&users=1&mode=rss<br />
-                https://news.google.com/atom/search?ie=UTF-8&oe=UTF-8&q={{name}}&hl=ja&gl=JP&ceid=JP:ja<br />
-                http://www.slideshare.net/rss/tag/{{name}}<br />
-                https://medium.com/feed/tag/{{name}}<br />
-                https://www.reddit.com/r/{{name}}/<br />
-                https://queryfeed.net/tw?q={{name}}<br />
-                https://note.com/hashtag/{{name}}/rss<br />
-                https://zenn.dev/topic/{{name}}/feed<br />
-                https://dev.to/feed/tag/{{name}}
+                media,url
+                qiita,https://qiita.com/tags/{{name}}/feed.atom<br />
+                hatena,https://b.hatena.ne.jp/search/text?q={{name}}&users=1&mode=rss<br />
+                zenn,https://zenn.dev/topic/{{name}}/feed<br />
+                medium,https://medium.com/feed/tag/{{name}}<br />
+                GoogleNews,https://news.google.com/atom/search?ie=UTF-8&oe=UTF-8&q={{name}}&hl=ja&gl=JP&ceid=JP:ja<br />
+                dev.to,https://dev.to/feed/tag/{{name}}<br />
+                stackOverflow,https://stackoverflow.com/feeds/tag?tagnames={{name}}&sort=newest<br />
+                slideshare,http://www.slideshare.net/rss/tag/{{name}}<br />
+                note,https://note.com/hashtag/{{name}}/rss<br />
+                reddit,https://www.reddit.com/r/{{name}}/<br />
+                queryfeed,https://queryfeed.net/tw?q={{name}}<br />
+                GoogleAlert,
             </div>
         `,
     })
